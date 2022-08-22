@@ -13,7 +13,7 @@ log_info "Init: Custom assemble script is working!!!!!"
 
 
 # Workaround to #03294986 case (partially, because there are more errors)
-#. ${JBOSS_HOME}/bin/launch/sso-rcfile-definitions.sh
+. ${JBOSS_HOME}/bin/launch/sso-rcfile-definitions.sh
 #export readonly AUS=$'\037'
 
 . "${JBOSS_CONTAINER_WILDFLY_S2I_MODULE}/assemble.sh"
