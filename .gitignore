@@ -1,0 +1,4 @@
+.project
+**/generated
+/target
+/work

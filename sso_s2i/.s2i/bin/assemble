@@ -1,0 +1,23 @@
+#!/bin/sh
+
+WILDFLY_S2I_SOURCE_MODULES_DIR="${EAP_S2I_SOURCE_MODULES_DIR:-modules}"
+WILDFLY_S2I_TARGET_MODULES_DIR="${EAP_S2I_TARGET_MODULES_DIR:-${JBOSS_HOME}/modules}"
+
+# Notice that the value of this variable must be aligned with the value configured in launch-config.sh
+export WILDFLY_SERVER_CONFIGURATION=standalone-openshift.xml
+export CONFIG_ADJUSTMENT_MODE="xml_cli"
+
+source "${JBOSS_CONTAINER_UTIL_LOGGING_MODULE}/logging.sh"
+
+log_info "Init: Custom assemble script is working!!!!!"
+
+
+# Workaround to #03294986 case (partially, because there are more errors)
+#. ${JBOSS_HOME}/bin/launch/sso-rcfile-definitions.sh
+#export readonly AUS=$'\037'
+
+. "${JBOSS_CONTAINER_WILDFLY_S2I_MODULE}/assemble.sh"
+
+
+log_info "End: Custom assemble script has finished"
+
