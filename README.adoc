@@ -50,7 +50,9 @@ oc login ....
 ./10-install.sh
 ----
 
+Navigate to *Builds > sso76*:
 
+.We have created the *sso76* build config:
 image::buildconfig_sso_01.png[link=doc/images/buildconfig_sso_01.png,window=_blank,pdfwidth=55%, align="center"]
 
 
