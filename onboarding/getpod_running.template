@@ -1,0 +1,6 @@
+{{/* a comment */ -}}
+{{range .items -}}
+     {{if (eq .status.phase "Running") -}}
+          {{.metadata.name}}{{"\n"}}
+     {{- end}}
+{{- end -}}

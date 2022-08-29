@@ -1,0 +1,43 @@
+// --------------------------------
+// Document Information
+// This document-vars.adoc file contains mainly static/routine variables for the README.adoc
+// It should not contain customer specific variables related to the customer name and related information
+// --------------------------------
+:toc-title: Table of Contents
+
+:ocp_v: 3.11
+:ocp_l: OpenShift Container Platform {ocp_v}
+:ocp_s: OCP {ocp_v}
+:ocp_a: OCP
+
+
+:subject:  Upgrading RH-SSO on {ocp_s}
+:description: Project to build a custom RH-SSO image on {ocp_s}
+
+:imagesdir: doc/images/
+
+:doctype: book
+:listing-caption: Listing
+:toc: macro
+:toclevels: 4
+:sectnumlevels: 6
+:numbered:
+:chapter-label:
+:icons: font
+
+
+:revnumber: {gitdate}
+// --------------------------------
+// Other Vars
+// --------------------------------
+
+:git_rh_base: https://gitlab.consulting.redhat.com
+:git_rh:     {git_rh_base}/iberia-consulting/santalucia/support/rhsso-s2i-git
+:url_prj_rh: {git_rh}/
+:gitlabblob_rh: {url_prj_rh}-/blob/master
+//
+:sourcedir: {git_rh}/-/raw/master
+:gitlabbase: {gitlabblob_rh}
+
+
+// EOF

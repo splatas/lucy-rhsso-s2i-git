@@ -1,0 +1,58 @@
+////
+
+////
+
+include::doc/document-vars.adoc[]
+
+
+= {subject}: {description}
+
+toc::[]
+
+
+== Import Image
+
+----
+cd rhsso-s2i-git/onboarding
+oc login ....
+./01-preparing.sh
+----
+
+== Configure your credentials
+
+The file contains the credentials to create two important secrets:
+
+* *GIT_SECRET* to access to Git repo
+* *PULL_SECRET* to get the imagestream.
+
+The credentials are indicated in the `rhsso-s2i-git/templates/params/mnishift/.credentials`:
+
+----
+# Account to registry.redhat.io
+REG_REDHAT_IO_USERNAME=${my_registry_redhat_username}
+REG_REDHAT_IO_PWD=${my_registry_redhat_password}
+REG_REDHAT_IO_EMAIL=${my_registry_redhat_email}
+#
+# Account to Git
+GIT_CRED_USERNAME=${my_gitlab_username}
+GIT_CRED_PWD=${my_gitlab_password}
+#
+----
+
+IMPORTANT: You can replace them with your values.
+
+
+== Creating the BuildConfig
+
+----
+cd rhsso-s2i-git/onboarding
+oc login ....
+./10-install.sh
+----
+
+
+image::buildconfig_sso_01.png[link=doc/images/buildconfig_sso_01.png,window=_blank,pdfwidth=55%, align="center"]
+
+
+
+// EOF
