@@ -10,22 +10,14 @@ include::doc/document-vars.adoc[]
 toc::[]
 
 
-== Import Image
-
-----
-cd rhsso-s2i-git/onboarding
-oc login ....
-./01-preparing.sh
-----
-
 == Configure your credentials
 
 The file contains the credentials to create two important secrets:
 
-* *GIT_SECRET* to access to Git repo
+* *GIT_SECRET* to access to Git repo.
 * *PULL_SECRET* to get the imagestream.
 
-The credentials are indicated in the `rhsso-s2i-git/templates/params/mnishift/.credentials`:
+The credentials are indicated in the `rhsso-s2i-git/templates/params/minishift/.credentials`:
 
 ----
 # Account to registry.redhat.io
@@ -40,6 +32,47 @@ GIT_CRED_PWD=${my_gitlab_password}
 ----
 
 IMPORTANT: You can replace them with your values.
+
+Other way:
+
+. Create your `${HOME}/.bash_envs`:
+
+----
+$ cd
+$ vi .bash_envs
+----
+
+[start=2]
+. Add your credentials:
+
+----
+my_registry_redhat_username="<your_registry_redhat_username>"
+my_registry_redhat_password="<your_registry_redhat_password>"
+my_registry_redhat_email=<your_registry_redhat_mail>
+my_gitlab_username=<your_gitlab_username>
+my_gitlab_password="<your_gitlab_password>"
+
+export my_registry_redhat_username my_registry_redhat_password my_registry_redhat_email my_gitlab_username my_gitlab_password
+----
+
+[start=3]
+. Now we can create the secrets and import the imagestream from *registry.redhat.io*, execute:
+
+----
+$ . ~/.bash_envs
+$ cd rhsso-s2i-git/onboarding
+$ oc login ....
+$ ./01-preparing.sh
+----
+
+
+== Import Image & Create Secrets
+
+----
+cd rhsso-s2i-git/onboarding
+oc login ....
+./01-preparing.sh
+----
 
 
 == Creating the BuildConfig

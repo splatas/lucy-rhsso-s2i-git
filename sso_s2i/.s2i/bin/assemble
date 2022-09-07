@@ -19,7 +19,7 @@ log_info "Init: Custom assemble script is working!!!!!"
 #export readonly AUS=$'\037'
 
 echo "Update source in  /usr/local/s2i/install-common.sh"
-sed -i "s|source \${JBOSS_HOME}/bin/launch/openshift-common.sh|source \${JBOSS_HOME}/bin/launch/openshift-common.sh\nsource \${JBOSS_HOME}/bin/launch/launch-common.sh\n|g" /usr/local/s2i/install-common.sh
+#sed -i "s|source \${JBOSS_HOME}/bin/launch/openshift-common.sh|source \${JBOSS_HOME}/bin/launch/openshift-common.sh\nsource \${JBOSS_HOME}/bin/launch/launch-common.sh\n|g" /usr/local/s2i/install-common.sh
 
 #cat /usr/local/s2i/install-common.sh
 
