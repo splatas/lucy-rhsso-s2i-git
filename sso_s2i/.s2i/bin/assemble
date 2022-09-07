@@ -1,7 +1,8 @@
 #!/bin/sh
 
 #pstree -a
-ps -AfT
+#ps -AfT
+ls -la /tmp/scripts/
 
 echo "Before export Custom assemble"
 
