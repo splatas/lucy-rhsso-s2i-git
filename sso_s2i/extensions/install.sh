@@ -1,6 +1,7 @@
 #!/bin/bash
 
 injected_dir=$1
+caller
 
 echo "[S2I install.sh] injected_dir: ${injected_dir}"
 echo "[S2I install.sh] ENV_FILES---: ${ENV_FILES}"
