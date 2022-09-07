@@ -1,9 +1,13 @@
 #!/bin/sh
 
-pstree -a
+#pstree -a
+ps -AfT
 
 echo "Before export Custom assemble"
 
+# Workaround to #03294986 case (partially, because there are more errors)
+. ${JBOSS_HOME}/bin/launch/sso-rcfile-definitions.sh
+#export readonly AUS=$'\037'
 caller
 
 WILDFLY_S2I_SOURCE_MODULES_DIR="${EAP_S2I_SOURCE_MODULES_DIR:-modules}"
@@ -18,9 +22,6 @@ export CONFIG_ADJUSTMENT_MODE="xml_cli"
 log_info "Init: Custom assemble script is working!!!!!"
 
 
-# Workaround to #03294986 case (partially, because there are more errors)
-. ${JBOSS_HOME}/bin/launch/sso-rcfile-definitions.sh
-#export readonly AUS=$'\037'
 
 #echo "Update source in  /usr/local/s2i/install-common.sh"
 #sed -i "s|source \${JBOSS_HOME}/bin/launch/openshift-common.sh|source \${JBOSS_HOME}/bin/launch/openshift-common.sh\nsource \${JBOSS_HOME}/bin/launch/launch-common.sh\n|g" /usr/local/s2i/install-common.sh
