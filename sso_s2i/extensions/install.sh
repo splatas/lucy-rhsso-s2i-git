@@ -9,14 +9,14 @@ source /usr/local/s2i/install-common.sh
 cp ${injected_dir}/configuration/* ${JBOSS_HOME}/standalone/configuration/
 
 # Workaround Solved:
-log_info "/usr/local/s2i/install-common.sh: line 54: getConfigurationMode: command not found"
+echo "/usr/local/s2i/install-common.sh: line 54: getConfigurationMode: command not found"
 sed -i "s|source \${JBOSS_HOME}/bin/launch/openshift-common.sh|source \${JBOSS_HOME}/bin/launch/openshift-common.sh\nsource \${JBOSS_HOME}/bin/launch/launch-common.sh\n|g" /usr/local/s2i/install-common.sh
 ####################
 # Add Oracle JDBC Driver Module & Driver
-log_info "Before install_modules"
+echo "Before install_modules"
 install_modules ${injected_dir}/modules
 #
-log_info "Before configure drivers"
+echo "Before configure drivers"
 configure_drivers ${injected_dir}/configuration/oracle_driver.properties
 #######################
 #######################
