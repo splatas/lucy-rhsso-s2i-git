@@ -35,7 +35,7 @@ cat ${JBOSS_HOME}/bin/launch/openshift-common.sh
 
 echo "---"
 
-grep -r "launch\-common.sh"  ${JBOSS_HOME/bin/
+grep -r "launch\-common.sh"  ${JBOSS_HOME}/bin/
 
 
 . "${JBOSS_CONTAINER_WILDFLY_S2I_MODULE}/assemble.sh"
