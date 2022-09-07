@@ -18,20 +18,22 @@ log_info "Init: Custom assemble script is working!!!!!"
 . ${JBOSS_HOME}/bin/launch/sso-rcfile-definitions.sh
 #export readonly AUS=$'\037'
 
+echo "Update source in  /usr/local/s2i/install-common.sh"
+sed -i "s|source \${JBOSS_HOME}/bin/launch/openshift-common.sh|source \${JBOSS_HOME}/bin/launch/openshift-common.sh\nsource \${JBOSS_HOME}/bin/launch/launch-common.sh\n|g" /usr/local/s2i/install-common.sh
 
-cat /usr/local/s2i/install-common.sh
-
-echo "----"
-
-cat /opt/eap/bin/launch/openshift-common.sh
+#cat /usr/local/s2i/install-common.sh
 
 echo "----"
 
-cat $JBOSS_HOME/bin/launch/launch-common.sh
+#cat /opt/eap/bin/launch/openshift-common.sh
+
+echo "----"
+
+#cat $JBOSS_HOME/bin/launch/launch-common.sh
 
 echo "---"
 
-cat ${JBOSS_HOME}/bin/launch/openshift-common.sh
+#cat ${JBOSS_HOME}/bin/launch/openshift-common.sh
 
 echo "---"
 
