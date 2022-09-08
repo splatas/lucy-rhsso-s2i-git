@@ -2,11 +2,9 @@
 
 #pstree -a
 #ps -AfT
-ls -la /tmp/scripts/
+#ls -la /tmp/scripts/
 
 echo "Before export Custom assemble"
-
-cat /usr/libexec/s2i/assemble
 
 echo "---"
 
@@ -15,15 +13,11 @@ echo "---"
 #export readonly AUS=$'\037'
 caller
 
-#grep -r "GIT_SSL_NO_VERIFY" /opt/jboss/
-#echo "---"
-#grep -r "GIT_SSL_NO_VERIFY" /usr/local/s2i/
-#echo "---"
+grep -r "git\ " /opt/jboss/ 2> /dev/null
+echo "---"
 
-#grep -r "git " /opt/jboss/
-#echo "---"
-#grep -r "git " /usr/local/s2i/
-#echo "---"
+grep -r "git\ " /usr/local/s2i/ 2> /dev/null
+echo "---"
 
 
 WILDFLY_S2I_SOURCE_MODULES_DIR="${EAP_S2I_SOURCE_MODULES_DIR:-modules}"
