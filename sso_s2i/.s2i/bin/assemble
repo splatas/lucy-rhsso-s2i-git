@@ -1,11 +1,6 @@
 #!/bin/sh
 
-#pstree -a
-#ps -AfT
-#ls -la /tmp/scripts/
-
 echo "Before export Custom assemble"
-
 echo "---"
 
 # Workaround to #03294986 case (partially, because there are more errors)
@@ -26,25 +21,12 @@ export CONFIG_ADJUSTMENT_MODE="xml_cli"
 log_info "Init: Custom assemble script is working!!!!!"
 
 
-
 #echo "Update source in  /usr/local/s2i/install-common.sh"
 #sed -i "s|source \${JBOSS_HOME}/bin/launch/openshift-common.sh|source \${JBOSS_HOME}/bin/launch/openshift-common.sh\nsource \${JBOSS_HOME}/bin/launch/launch-common.sh\n|g" /usr/local/s2i/install-common.sh
 
 #cat /usr/local/s2i/install-common.sh
 
 echo "----"
-
-#cat /opt/eap/bin/launch/openshift-common.sh
-
-echo "----"
-
-#cat $JBOSS_HOME/bin/launch/launch-common.sh
-
-echo "---"
-
-#cat ${JBOSS_HOME}/bin/launch/openshift-common.sh
-
-echo "---"
 
 grep -r "launch\-common.sh"  ${JBOSS_HOME}/bin/
 
